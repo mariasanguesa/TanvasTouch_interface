@@ -1,0 +1,126 @@
+﻿<Window x:Class="final_interface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:final_interface"
+        mc:Ignorable="d"
+        Title="MainWindow" Loaded="Window_Loaded">
+
+    <Grid Name="mainGrid"  Width="1024" Height="570">
+
+        <!--Divide the main grid into smaller sections-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="1" Background="#f9e69b"></Border>
+        <Border Grid.Column="2" Background="#77b8db"></Border>
+        <Border Grid.Column="1" Grid.Row="1" Background="#ffbcbc"></Border>
+        <Border Grid.Column="2" Grid.Row="1" Background="#9cd3a5"></Border>
+
+        <!--The menu has two rows and a background image-->
+        <Grid Grid.RowSpan="2">
+            <Grid.Background>
+                <ImageBrush ImageSource="assets/menu.png"/>
+            </Grid.Background>
+        </Grid>
+
+        <!--Here the buttons of the main menu are designed-->
+        <!--Each page corresponds to a group of four instruments-->
+        <!--The first page displays a harp, a piano, a tenor saxophone and a violin-->
+        <!--The second page displays a harpsicord, an eardrum, a guitar and a accordion-->
+        <!--The third page displays a flute, a horn, a hurdy-gurdy and a trumpet-->
+        <StackPanel Name="stackPanel" Grid.RowSpan="2">
+
+            <Border Background="#f9e69b" BorderThickness="10,80,10,1">
+                <Button Name="buttonPage1" BorderThickness="0" Margin="0,8,0,0" Height="40" Background="#ffbcbc" FontSize="18" FontWeight="Bold" Click="OnClickPage1">Page 1</Button>
+            </Border>
+
+            <Border Background="#9cd3a5" BorderThickness="10,35,10,1">
+                <Button Name="buttonPage2" BorderThickness="0" Margin="0,8,0,0" Height="40" Background="#77b8db" FontSize="18" FontWeight="Bold" Click="OnClickPage2">Page 2</Button>
+            </Border>
+
+            <Border Background="#77b8db" BorderThickness="10,35,10,1">
+                <Button Name="buttonPage3" BorderThickness="0" Margin="0,8,0,0" Height="40" Background="#f9e69b" FontSize="18" FontWeight="Bold" Click="OnClickPage3" >Page 3</Button>
+            </Border>
+
+        </StackPanel>
+
+
+        <Grid Name="gridOne" Grid.Column="1">
+            <Canvas Name="canvasOne">
+                <Image Name="hapticImageHarp" Width="{Binding Path=ActualWidth, ElementName=canvasOne}" Height="{Binding Path=ActualHeight, ElementName=canvasOne}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/harp_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageHarp" Width="{Binding Path=ActualWidth, ElementName=canvasOne}" Height="{Binding Path=ActualHeight, ElementName=canvasOne}" Visibility="Hidden" Source="assets/instrument_images/harp.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="hapticImageHarpsichord" Width="{Binding Path=ActualWidth, ElementName=canvasOne}" Height="{Binding Path=ActualHeight, ElementName=canvasOne}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/harpsichord_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageHarpsichord" Width="{Binding Path=ActualWidth, ElementName=canvasOne}" Height="{Binding Path=ActualHeight, ElementName=canvasOne}" Visibility="Hidden" Source="assets/instrument_images/harpsichord.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="hapticImageFlute" Width="{Binding Path=ActualWidth, ElementName=canvasOne}" Height="{Binding Path=ActualHeight, ElementName=canvasOne}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/flute_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageFlute" Width="{Binding Path=ActualWidth, ElementName=canvasOne}" Height="{Binding Path=ActualHeight, ElementName=canvasOne}" Visibility="Hidden" Source="assets/instrument_images/flute.png" Canvas.Left="0" Canvas.Top="0"/>
+            </Canvas>
+            <Button Name="buttonPlayOne" Click="onClickPlayButtonOne" Visibility="Hidden" Width="80" Height="80" Background="#f9e69b" Margin="0,0,330,205" BorderThickness="0">
+                <Image Source="assets/play_button.png"/>
+            </Button>
+            <Button Name="buttonStopOne" Click="onClickStopButtonOne" Visibility="Hidden" Width="80" Height="80" Background="#f9e69b" Margin="0,0,330,205" BorderThickness="0">
+                <Image Source="assets/stop_button.png"/>
+            </Button>
+        </Grid>
+
+        <Grid Name="gridTwo" Grid.Column="2">
+            <Canvas Name="canvasTwo">
+                <Image Name="hapticImagePiano" Width="{Binding Path=ActualWidth, ElementName=canvasTwo}" Height="{Binding Path=ActualHeight, ElementName=canvasTwo}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/piano_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImagePiano" Width="{Binding Path=ActualWidth, ElementName=canvasTwo}" Height="{Binding Path=ActualHeight, ElementName=canvasTwo}" Visibility="Hidden" Source="assets/instrument_images/piano.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="hapticImageEardrum" Width="{Binding Path=ActualWidth, ElementName=canvasTwo}" Height="{Binding Path=ActualHeight, ElementName=canvasTwo}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/eardrum_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageEardrum" Width="{Binding Path=ActualWidth, ElementName=canvasTwo}" Height="{Binding Path=ActualHeight, ElementName=canvasTwo}" Visibility="Hidden" Source="assets/instrument_images/eardrum.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="hapticImageHorn" Width="{Binding Path=ActualWidth, ElementName=canvasTwo}" Height="{Binding Path=ActualHeight, ElementName=canvasTwo}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/horn_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageHorn" Width="{Binding Path=ActualWidth, ElementName=canvasTwo}" Height="{Binding Path=ActualHeight, ElementName=canvasTwo}" Visibility="Hidden" Source="assets/instrument_images/horn.png" Canvas.Left="0" Canvas.Top="0"/>
+            </Canvas>
+            <Button Name="buttonPlayTwo" Click="onClickPlayButtonTwo" Visibility="Hidden" Width="80" Height="80" Background="#77b8db" Margin="0,0,330,205" BorderThickness="0">
+                <Image Source="assets/play_button.png"/>
+            </Button>
+            <Button Name="buttonStopTwo" Click="onClickStopButtonTwo" Visibility="Hidden" Width="80" Height="80" Background="#77b8db" Margin="0,0,330,205" BorderThickness="0">
+                <Image Source="assets/stop_button.png"/>
+            </Button>
+        </Grid>
+
+        <Grid Name="gridThree" Grid.Column="1" Grid.Row="1">
+            <Canvas Name="canvasThree">
+                <Image Name="hapticImageSaxophone" Width="{Binding Path=ActualWidth, ElementName=canvasThree}" Height="{Binding Path=ActualHeight, ElementName=canvasThree}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/saxophone_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageSaxophone" Width="{Binding Path=ActualWidth, ElementName=canvasThree}" Height="{Binding Path=ActualHeight, ElementName=canvasThree}" Visibility="Hidden" Source="assets/instrument_images/saxophone.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="hapticImageGuitar" Width="{Binding Path=ActualWidth, ElementName=canvasThree}" Height="{Binding Path=ActualHeight, ElementName=canvasThree}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/guitar_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageGuitar" Width="{Binding Path=ActualWidth, ElementName=canvasThree}" Height="{Binding Path=ActualHeight, ElementName=canvasThree}" Visibility="Hidden" Source="assets/instrument_images/guitar.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="hapticImageHurdyGurdy" Width="{Binding Path=ActualWidth, ElementName=canvasThree}" Height="{Binding Path=ActualHeight, ElementName=canvasThree}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/hurdy-gurdy_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageHurdyGurdy" Width="{Binding Path=ActualWidth, ElementName=canvasThree}" Height="{Binding Path=ActualHeight, ElementName=canvasThree}" Visibility="Hidden" Source="assets/instrument_images/hurdy-gurdy.png" Canvas.Left="0" Canvas.Top="0"/>
+            </Canvas>
+            <Button Name="buttonPlayThree" Click="onClickPlayButtonThree" Visibility="Hidden" Width="80" Height="80" Background="#ffbcbc" Margin="0,0,330,205" BorderThickness="0">
+                <Image Source="assets/play_button.png"/>
+            </Button>
+            <Button Name="buttonStopThree" Click="onClickStopButtonThree" Visibility="Hidden" Width="80" Height="80" Background="#ffbcbc" Margin="0,0,330,205" BorderThickness="0">
+                <Image Source="assets/stop_button.png"/>
+            </Button>
+        </Grid>
+
+        <Grid Name="gridFour" Grid.Column="2" Grid.Row="1">
+            <Canvas Name="canvasFour">
+                <Image Name="hapticImageViolin" Width="{Binding Path=ActualWidth, ElementName=canvasFour}" Height="{Binding Path=ActualHeight, ElementName=canvasFour}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/violin_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageViolin" Width="{Binding Path=ActualWidth, ElementName=canvasFour}" Height="{Binding Path=ActualHeight, ElementName=canvasFour}" Visibility="Hidden" Source="assets/instrument_images/violin.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="hapticImageAccordion" Width="{Binding Path=ActualWidth, ElementName=canvasFour}" Height="{Binding Path=ActualHeight, ElementName=canvasFour}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/accordion_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageAccordion" Width="{Binding Path=ActualWidth, ElementName=canvasFour}" Height="{Binding Path=ActualHeight, ElementName=canvasFour}" Visibility="Hidden" Source="assets/instrument_images/accordion.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="hapticImageTrumpet" Width="{Binding Path=ActualWidth, ElementName=canvasFour}" Height="{Binding Path=ActualHeight, ElementName=canvasFour}" Stretch="UniformToFill" Visibility="Hidden" Source="assets/haptic_images/trumpet_haptic.png" Canvas.Left="0" Canvas.Top="0"/>
+                <Image Name="graphicImageTrumpet" Width="{Binding Path=ActualWidth, ElementName=canvasFour}" Height="{Binding Path=ActualHeight, ElementName=canvasFour}" Visibility="Hidden" Source="assets/instrument_images/trumpet.png" Canvas.Left="0" Canvas.Top="0"/>
+            </Canvas>
+            <Button Name="buttonPlayFour" Click="onClickPlayButtonFour" Visibility="Hidden" Width="80" Height="80" Background="#9cd3a5" Margin="0,0,330,205" BorderThickness="0">
+                <Image Source="assets/play_button.png"/>
+            </Button>
+            <Button Name="buttonStopFour" Click="onClickStopButtonFour" Visibility="Hidden" Width="80" Height="80" Background="#9cd3a5" Margin="0,0,330,205" BorderThickness="0">
+                <Image Source="assets/stop_button.png"/>
+            </Button>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,136 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="assets\accordion.png" />
+    <None Remove="assets\flute.png" />
+    <None Remove="assets\guitar.png" />
+    <None Remove="assets\haptic_images\accordion_haptic.png" />
+    <None Remove="assets\haptic_images\bricks.png" />
+    <None Remove="assets\haptic_images\bristles.png" />
+    <None Remove="assets\haptic_images\bubbles.png" />
+    <None Remove="assets\haptic_images\cactus.png" />
+    <None Remove="assets\haptic_images\diamonds.png" />
+    <None Remove="assets\haptic_images\eardrum_haptic.png" />
+    <None Remove="assets\haptic_images\flute_haptic.png" />
+    <None Remove="assets\haptic_images\guitar_haptic.png" />
+    <None Remove="assets\haptic_images\harpsichord_haptic.png" />
+    <None Remove="assets\haptic_images\harp_haptic.png" />
+    <None Remove="assets\haptic_images\horn_haptic.png" />
+    <None Remove="assets\haptic_images\hurdy-gurdy_haptic.png" />
+    <None Remove="assets\haptic_images\iron.png" />
+    <None Remove="assets\haptic_images\iron_spheres.png" />
+    <None Remove="assets\haptic_images\leather.png" />
+    <None Remove="assets\haptic_images\marbles.png" />
+    <None Remove="assets\haptic_images\pebbles.png" />
+    <None Remove="assets\haptic_images\piano_haptic.png" />
+    <None Remove="assets\haptic_images\pine_leaves.png" />
+    <None Remove="assets\haptic_images\pungent.png" />
+    <None Remove="assets\haptic_images\sand.png" />
+    <None Remove="assets\haptic_images\saxophone_haptic.png" />
+    <None Remove="assets\haptic_images\smooth.png" />
+    <None Remove="assets\haptic_images\soft.png" />
+    <None Remove="assets\haptic_images\stones.png" />
+    <None Remove="assets\haptic_images\trumpet_haptic.png" />
+    <None Remove="assets\haptic_images\violin_haptic.png" />
+    <None Remove="assets\harp.png" />
+    <None Remove="assets\instrument_images\accordion.png" />
+    <None Remove="assets\instrument_images\eardrum.png" />
+    <None Remove="assets\instrument_images\flute.png" />
+    <None Remove="assets\instrument_images\guitar.png" />
+    <None Remove="assets\instrument_images\harp.png" />
+    <None Remove="assets\instrument_images\harpsichord.png" />
+    <None Remove="assets\instrument_images\horn.png" />
+    <None Remove="assets\instrument_images\hurdy-gurdy.png" />
+    <None Remove="assets\instrument_images\piano.png" />
+    <None Remove="assets\instrument_images\saxophone.png" />
+    <None Remove="assets\instrument_images\trumpet.png" />
+    <None Remove="assets\instrument_images\violin.png" />
+    <None Remove="assets\menu.png" />
+    <None Remove="assets\piano.png" />
+    <None Remove="assets\play_button.png" />
+    <None Remove="assets\saxophone.png" />
+    <None Remove="assets\squares.png" />
+    <None Remove="assets\squares_yellow.png" />
+    <None Remove="assets\stop_button.png" />
+    <None Remove="assets\stripes_haptic.png" />
+    <None Remove="assets\stripes_pink.png" />
+    <None Remove="assets\trumpet.png" />
+    <None Remove="assets\violin.png" />
+    <None Remove="assets\wood.png" />
+    <None Remove="assets\wood_blue.png" />
+    <None Remove="assets\wood_orange.png" />
+    <None Remove="assets\zebra.png" />
+    <None Remove="assets\zebra_green.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\haptic_images\bricks.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\haptic_images\accordion_haptic.png" />
+    <Resource Include="assets\haptic_images\bristles.png" />
+    <Resource Include="assets\haptic_images\bubbles.png" />
+    <Resource Include="assets\haptic_images\cactus.png" />
+    <Resource Include="assets\haptic_images\diamonds.png" />
+    <Resource Include="assets\haptic_images\eardrum_haptic.png" />
+    <Resource Include="assets\haptic_images\flute_haptic.png" />
+    <Resource Include="assets\haptic_images\guitar_haptic.png" />
+    <Resource Include="assets\haptic_images\harpsichord_haptic.png" />
+    <Resource Include="assets\haptic_images\harp_haptic.png" />
+    <Resource Include="assets\haptic_images\horn_haptic.png" />
+    <Resource Include="assets\haptic_images\hurdy-gurdy_haptic.png" />
+    <Resource Include="assets\haptic_images\iron.png" />
+    <Resource Include="assets\haptic_images\iron_spheres.png" />
+    <Resource Include="assets\haptic_images\leather.png" />
+    <Resource Include="assets\haptic_images\marbles.png" />
+    <Resource Include="assets\haptic_images\pebbles.png" />
+    <Resource Include="assets\haptic_images\piano_haptic.png" />
+    <Resource Include="assets\haptic_images\pine_leaves.png" />
+    <Resource Include="assets\haptic_images\pungent.png" />
+    <Resource Include="assets\haptic_images\sand.png" />
+    <Resource Include="assets\haptic_images\saxophone_haptic.png" />
+    <Resource Include="assets\haptic_images\smooth.png" />
+    <Resource Include="assets\haptic_images\soft.png" />
+    <Resource Include="assets\haptic_images\stones.png" />
+    <Resource Include="assets\haptic_images\trumpet_haptic.png" />
+    <Resource Include="assets\haptic_images\violin_haptic.png" />
+    <Resource Include="assets\instrument_images\hurdy-gurdy.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\instrument_images\horn.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\instrument_images\eardrum.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Tanvas.TanvasTouch.WpfUtilities" Version="5.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\instrument_images\accordion.png" />
+    <Resource Include="assets\instrument_images\flute.png" />
+    <Resource Include="assets\instrument_images\guitar.png" />
+    <Resource Include="assets\instrument_images\harp.png" />
+    <Resource Include="assets\instrument_images\harpsichord.png" />
+    <Resource Include="assets\instrument_images\piano.png" />
+    <Resource Include="assets\instrument_images\saxophone.png" />
+    <Resource Include="assets\instrument_images\trumpet.png" />
+    <Resource Include="assets\instrument_images\violin.png" />
+    <Resource Include="assets\menu.png" />
+    <Resource Include="assets\play_button.png" />
+    <Resource Include="assets\stop_button.png" />
+  </ItemGroup>
+
+</Project>

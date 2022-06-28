@@ -1,1 +1,2 @@
 # TanvasTouch_interface
+This repository contains all the code used to develop an interface for the TanvasTouch device. This interface aims to present sounds in a multi-sensory way. Perceiving music not only through the sense of hearing, but also through the sense of sight and touch. This interface has been created during the elaboration of my thesis in order to make a subjective analysis of how to perceive music multisensorially. This application can be useful for deaf and hearing impaired people.
